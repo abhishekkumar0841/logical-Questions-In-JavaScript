@@ -48,7 +48,7 @@
 
 // console.log(printPat())
 
-//Q. 4
+//Q. 3
 //    *
 //   ***
 //  *****
@@ -70,3 +70,29 @@ function printPat3(){
     return str;
 }
 console.log(printPat3())
+
+//Q. 4
+//    *
+//   ***
+//  *****
+// *******
+//*********
+
+function printPat4(){
+    let rows = 5, cols = 9, i, j, k, str = ""; 
+    for(i = 1; i <= rows; i++){
+        k = 1;
+        for(j = 1; j <= cols; j++){
+            if(j >= 6 -i && j <= 4 + i && k){
+                str += "*";
+                k = 0;
+            }else{
+                str += " ";
+                k = 1;
+            }
+        }
+        str += "\n"
+    }
+    return str;
+}
+console.log(printPat4())
