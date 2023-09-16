@@ -5,23 +5,23 @@
 // ****
 // *****
 
-// function printPat(){
-//     let numOfCols = 5, numOfRows = 5, i, j, str = "";
+function printPat1(){
+    let numOfCols = 5, numOfRows = 5, i, j, str = "";
 
-//     for(i = 1; i <= numOfRows; i++){
-//         for(j = 1; j <= numOfCols; j++){
-//             if(j <= i){
-//                 str += "*"
-//             }else{
-//                 str += " "
-//             }
-//         }
-//         str += "\n"
-//     }
-//     return str;
-// }
+    for(i = 1; i <= numOfRows; i++){
+        for(j = 1; j <= numOfCols; j++){
+            if(j <= i){
+                str += "*"
+            }else{
+                str += " "
+            }
+        }
+        str += "\n"
+    }
+    return str;
+}
 
-// console.log(printPat())
+console.log(printPat1())
 
 // Q.2
 // *****
@@ -30,23 +30,23 @@
 //    **
 //     *
 
-// function printPat(){
-//     let numOfCols = 5, numOfRows = 5, i, j, str = "";
+function printPat2(){
+    let numOfCols = 5, numOfRows = 5, i, j, str = "";
 
-//     for(i = 1; i <= numOfRows; i++){
-//         for(j = 1; j <= numOfCols; j++){
-//             if(j >= i){
-//                 str += "*"
-//             }else{
-//                 str += " "
-//             }
-//         }
-//         str += "\n"
-//     }
-//     return str;
-// }
+    for(i = 1; i <= numOfRows; i++){
+        for(j = 1; j <= numOfCols; j++){
+            if(j >= i){
+                str += "*"
+            }else{
+                str += " "
+            }
+        }
+        str += "\n"
+    }
+    return str;
+}
 
-// console.log(printPat())
+console.log(printPat2())
 
 //Q. 3
 //    *
@@ -96,3 +96,26 @@ function printPat4(){
     return str;
 }
 console.log(printPat4())
+
+//Q. 5
+// *********
+// **** ****
+// ***   ***
+// **     **
+// *       *
+
+function printPat5(){
+    let rows = 5, cols = 9, i, j, str = ""; 
+    for(i = 1; i <= rows; i++){
+        for(j = 1; j <= cols; j++){
+            if(j <= 6 - i || j >= 4 + i){
+                str += "*"
+            }else{
+                str += " "
+            }
+        }
+        str += "\n"
+    }
+    return str;
+}
+console.log(printPat5())
