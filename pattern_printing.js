@@ -149,6 +149,36 @@ function printPat6(){
 }
 console.log(printPat6())
 
+// Q. 7
+// *********
+//  *******
+//   *****
+//    ***
+//     *
+//    ***
+//   *****
+//  *******
+// *********
+
+function printPat7(){
+    let str = "";
+    let k = 10;
+    let l = 0;
+    for(let i = 1; i <= 9; i++){
+        i <= 5 ? k-- && l++ : k++ && l--;
+        for(let j = 1; j <= 9; j++){
+            if(j >= l && j <= k){
+                str += "*"
+            }else{
+                str += " "
+            }
+        }
+        str += "\n"
+    }
+    return str;
+}
+console.log(printPat7())
+
 
 
 
