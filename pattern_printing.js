@@ -119,3 +119,40 @@ function printPat5(){
     return str;
 }
 console.log(printPat5())
+
+//Q. 6
+//     *
+//    ***
+//   *****
+//  *******
+// *********
+//  *******
+//   *****
+//    ***
+//     *
+
+function printPat6(){
+    let str = "";
+    let k = 0;
+    for(let i = 1; i <= 9; i++){
+        i <= 5 ? k++ : k--;
+        for(let j = 1; j <= 9; j++){
+            if(j >= 6 - k && j <= 4 + k){
+                str += "*"
+            }else{
+                str += " "
+            }
+        }
+        str += "\n"
+    }
+    return str;
+}
+console.log(printPat6())
+
+
+
+
+
+
+
+
