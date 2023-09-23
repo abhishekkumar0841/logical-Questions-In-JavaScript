@@ -13,21 +13,26 @@
         let chances = 3;
 
         while (chances > 0) {
-            const userNum = parseInt(prompt("Enter Your Number..."));
+          const userNum = parseInt(prompt("Enter Your Number..."));
           if (randomNum === userNum) {
-            alert(`Congrats! you guessed correct number that is ${randomNum}`);
+            alert(
+              `Congrats! you guessed correct number that is:- ${randomNum}`
+            );
             break;
           } else if (userNum > randomNum) {
-            alert("You guessed too high, try again!");
-          } else if (userNum < randomNum) {
-            alert("You guess too low, try again!");
+            chances--;
+            alert(`You guessed too high, ${chances} chance left!`);
+          } else {
+            chances--;
+            alert(`You guessed too low, ${chances} chance left!`);
           }
-          chances--;
         }
-        if(chances === 0){
-            alert(`Game over! Better luck for next time, Correct number is ${randomNum}`)
+        if (chances === 0) {
+          alert(
+            `Game over! Better luck for next time, Correct number is ${randomNum}`
+          );
         }
-    }
+      }
 
       guessTheNumber();
     </script>
