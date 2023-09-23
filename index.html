@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function guessTheNumber() {
+        const randomNum = Math.floor(Math.random() * 100 + 1);
+        console.log("Random num is-->", randomNum);
+        let chances = 3;
+
+        while (chances > 0) {
+            const userNum = parseInt(prompt("Enter Your Number..."));
+          if (randomNum === userNum) {
+            alert(`Congrats! you guessed correct number that is ${randomNum}`);
+            break;
+          } else if (userNum > randomNum) {
+            alert("You guessed too high, try again!");
+          } else if (userNum < randomNum) {
+            alert("You guess too low, try again!");
+          }
+          chances--;
+        }
+        if(chances === 0){
+            alert(`Game over! Better luck for next time, Correct number is ${randomNum}`)
+        }
+    }
+
+      guessTheNumber();
+    </script>
+  </body>
+</html>
