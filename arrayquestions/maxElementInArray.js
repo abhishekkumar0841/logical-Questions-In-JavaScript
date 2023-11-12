@@ -14,6 +14,25 @@ function findMaxEl(arr) {
   return initialVal;
 }
 
-const myArr = [300, 29, 299, 38, 670];
+const myArr = [29, 300, 299, 38, 67];
 const maxEl = findMaxEl(myArr);
 console.log(maxEl);
+
+
+//using Math.max() method with spread operators
+let newMax = Math.max(...myArr)
+console.log('NEW MAX:', newMax);
+
+//using reduce() method with spread operators
+let maxReduce = myArr.reduce((max, curr)=> max > curr ? max : curr)
+console.log('max reduce:', maxReduce);
+
+//using sort() method
+let maxSort = myArr.sort((a, b) => a - b)
+let res = maxSort[maxSort.length - 1]
+console.log('max sort:', res);
+
+//OR*****
+let maxSort2 = myArr.sort((a, b) => b - a)
+let res2 = maxSort2[0]
+console.log('max sort 2:', res2);
