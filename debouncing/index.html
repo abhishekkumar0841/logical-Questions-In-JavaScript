@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debouncing</title>
+  </head>
+  <body>
+    <input type="text" id="input" placeholder="search" />
+
+    <script>
+      const inputEl = document.getElementById("input");
+      let counter = 0;
+      const getDataFunc = () => {
+        counter++;
+        console.log("getting data...", counter);
+      };
+
+      const debounceFunc = (cb, d) => {
+        let timer;
+        return () => {
+          if (timer) clearTimeout(timer);
+          timer = setTimeout(() => {
+            cb();
+          }, d);
+        };
+      };
+
+      const optimizedFunc = debounceFunc(getDataFunc, 1000);
+
+      inputEl.addEventListener("keyup", optimizedFunc);
+    </script>
+  </body>
+</html>
