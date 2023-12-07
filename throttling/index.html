@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Throttling in javascript</title>
+  </head>
+  <body>
+    <button id="btn">Throttling Button</button>
+
+    <script>
+      const btnEl = document.getElementById("btn");
+
+      let count = 0;
+
+      function addToCart() {
+        count++;
+        console.log(count, "Item added to cart");
+      }
+
+      function throttleFunc(cbFunc, d) {
+        let flag = false;
+        return function () {
+          if (!flag) {
+            cbFunc();
+            btnEl.disabled = true;
+            flag = true;
+            setTimeout(() => {
+              flag = false;
+              btnEl.disabled = false;
+            }, d);
+          }
+        };
+      }
+
+      const optimizedFunc = throttleFunc(addToCart, 1000);
+
+      btnEl.addEventListener("click", optimizedFunc);
+    </script>
+  </body>
+</html>
